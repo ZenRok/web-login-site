@@ -40,3 +40,9 @@ stages:
         azureSubscription: 'Azure subscription 1(a9d2bd62-1349-44fc-b91d-fd4c04893739)'
         KeyVaultName: 'Tenablescdemokeyvault'
         SecretsFilter: '*'
+    - task: Docker@2
+      displayName: Build an image
+      inputs: 
+       scriptPath: tiocs-azure-on-prem-scanner.sh
+       args: '$(TIOACCESSKEY) $(TIOSECRETKEY) $(TIOJFROGPASS)'
+    
