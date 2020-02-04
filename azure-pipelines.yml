@@ -35,3 +35,8 @@ stages:
         dockerfile: $(dockerfilePath)
         tags: |
           $(tag)
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Azure subscription 1(a9d2bd62-1349-44fc-b91d-fd4c04893739)'
+        KeyVaultName: 'Tenablescdemokeyvault'
+        SecretsFilter: '*'
